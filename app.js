@@ -102,7 +102,8 @@ chatGPTObserver.observe(document.body, {
 const deepSeekObserver = new MutationObserver((mutations) => {
     const elementOne = document.querySelectorAll(".cefa5c26 .fad49dec");
     const elementTwo = document.querySelectorAll(".ds-markdown");
-    if (elementOne && elementTwo) {
+    const elementThree = document.querySelectorAll(".katex-display>.katex>.katex-html");
+    if (elementOne && elementTwo && elementThree) {
         elementOne.forEach(el => {
             el.style.setProperty('direction', 'rtl', 'important');
             el.style.setProperty('text-align', 'right', 'important');
@@ -110,6 +111,9 @@ const deepSeekObserver = new MutationObserver((mutations) => {
         elementTwo.forEach(el => {
             el.style.setProperty('direction', 'rtl', 'important');
             el.style.setProperty('text-align', 'right', 'important');
+        });
+        elementThree.forEach(el => {
+            el.style.setProperty('direction', 'ltr', 'important');
         });
     }
 
